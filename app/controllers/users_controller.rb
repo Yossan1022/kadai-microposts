@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers,:micropostings,:microposters]
+  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers,:likes,:microposters]
 
   def index
     @pagy, @users = pagy(User.order(id: :desc), items: 25)
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
-  def micropostings
+  def likes
     @user = User.find(params[:id])
-    @pagy, @micropostings = pagy(@user.micropostings)
+    @pagy, @likes = pagy(@user.likes)
     counts(@user)
   end
 
