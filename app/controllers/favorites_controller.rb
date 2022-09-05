@@ -1,11 +1,10 @@
 class FavoritesController < ApplicationController
   before_action :require_user_logged_in
 
-  def create
-    user = User.find(params[:micropost_id])
-    current_user.micropost(user)
+ def create
+    @user = current_user.microposts.create( params[:micropost_id])
     flash[:success] = 'お気に入りに追加しました。'
-    redirect_to user
+    redirect_to @user
   end
 
   def destroy
