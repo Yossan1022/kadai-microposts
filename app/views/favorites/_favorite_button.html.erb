@@ -1,5 +1,4 @@
-  
-  <% if current_user.like?(user) %>
+ <% if current_user.like?(user) %>
     <%= form_with(model: current_user.favorites.find_by(micropost_id: user.id), method: :post) do |f| %>
       <%= hidden_field_tag :user_id, user.id %>
       <%= f.submit 'Likes', class: 'btn btn-danger w-100' %>

@@ -10,6 +10,8 @@
     </aside>
     <div class="col-sm-8">
       <%= render 'microposts/microposts', microposts: @microposts %>
+      <%= render 'favorites/favorite_button', user: @user %>
+      <%= render 'favorites/favorite_button', current_user: @current_user %>
     </div>
   </div>
 <% else %>
