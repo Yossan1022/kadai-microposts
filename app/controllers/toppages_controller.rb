@@ -5,4 +5,7 @@ class ToppagesController < ApplicationController
       @pagy, @microposts = pagy(current_user.feed_microposts.order(id: :desc))
     end
   end
+  def micropost
+    @micropost = current_user.microposts
+end
 end
