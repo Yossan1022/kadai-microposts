@@ -8,7 +8,7 @@
         <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
       </div>
     </div>
-    <%= render 'favorites/favorite_button', user: @user %>
+    <%= render 'favorites/favorite_button', micropost: @micropost %>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
