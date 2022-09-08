@@ -1,3 +1,4 @@
+<!--共通のViewとしてこのファイルを作成する-->
 <% if microposts.any? %>
   <ul class="list-unstyled mt-2">
     <% microposts.each do |micropost| %>
@@ -14,9 +15,7 @@
             <% if current_user == micropost.user %>
               <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <% end %>
-            <%= render 'favorites/favorite_button', current_user:@current_user %>
-           <%= render 'favorites/favorite_button', micropost:@micropost %>
-             <%= render 'favorites/favorite_button', user:@user %>
+          
              <%= link_to "Like", micropost, method: :post,  class: 'btn btn-danger btn-sm' %>
           </div>
         </div>
