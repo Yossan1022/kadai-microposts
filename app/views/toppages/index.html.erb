@@ -2,7 +2,7 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-sm-4">
-      <%= form_with(model: @micropost) do |f| %>
+      <%= form_with(model: @like) do |f| %>
         <div class="mb-3">
           <%= f.text_area :content, class: 'form-control', rows: 5 %>
         </div>
@@ -11,7 +11,7 @@
     </aside>
     <div class="col-sm-8">
       <%= render 'microposts/microposts', microposts: @microposts %>
-      
+     
     </div>
   </div>
 <% else %>
