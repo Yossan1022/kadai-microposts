@@ -6,8 +6,4 @@ class ToppagesController < ApplicationController
       
     end
   end
-  def micropost
-    user = User.find(params[:id])
-    @current_user = current_user.microposts
-end
 end
